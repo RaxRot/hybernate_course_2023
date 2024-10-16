@@ -52,3 +52,5 @@ w
 G.idea/sonarlint/issuestore/5/6/5671dbbd0c21d53bd496b5659d86b3f454157c8c,2\3\230c5af91f27268b3c60b38b3c365fabc80e0834
 w
 G.idea/sonarlint/issuestore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482,3\0\30f9777ea696a18aa49d3e9967e93a4276065227
+_
+/src/main/java/com/raxrot/entities/Employee.java,0\a\0afa8ff14c1f13c50e8b8263ba4dfe9531b588b1

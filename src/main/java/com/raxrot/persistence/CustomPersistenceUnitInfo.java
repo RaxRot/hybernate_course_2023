@@ -59,7 +59,7 @@ public class CustomPersistenceUnitInfo implements PersistenceUnitInfo {
 
     @Override
     public List<String> getManagedClassNames() {
-        return List.of("com.raxrot.entities.Product");
+        return List.of("com.raxrot.entities.Employee");
     }
 
     @Override

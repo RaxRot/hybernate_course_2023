@@ -1,6 +1,6 @@
 package com.raxrot;
 
-import com.raxrot.entities.Product;
+import com.raxrot.entities.Employee;
 import com.raxrot.persistence.CustomPersistenceUnitInfo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -12,19 +12,22 @@ public class Main {
     public static void main(String[] args) {
 
         //EntityManagerFactory emf= Persistence.createEntityManagerFactory("my-persistence-unit");
-        EntityManager em;
-        try (EntityManagerFactory emf = new HibernatePersistenceProvider()
-                .createContainerEntityManagerFactory(new CustomPersistenceUnitInfo(), new HashMap<>())) {
-            em = emf.createEntityManager();
-        }
+        EntityManagerFactory emf = new HibernatePersistenceProvider()
+                .createContainerEntityManagerFactory(new CustomPersistenceUnitInfo(), new HashMap<>());
+        EntityManager em = null;
 
         try {
-           em.getTransaction().begin();
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
 
-           Product p = new Product();
-           p.setId(2L);
-           p.setName("Chocolate");
-           em.persist(p);//register object
+           Employee e1= em.find(Employee.class, 1);
+            em.remove(e1);
+            Employee e2=new Employee();
+            e2.setId(1);
+            e2.setName("Li");
+            e2.setAddress("Chona");
+
+           em.persist(e2);//register object
 
            em.getTransaction().commit();//insert
        }catch (Exception e) {
