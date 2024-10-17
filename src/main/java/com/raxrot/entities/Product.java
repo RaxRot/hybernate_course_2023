@@ -1,28 +1,40 @@
 package com.raxrot.entities;
 
+import com.raxrot.entities.keys.ProductKey;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 
 @Entity
+@IdClass(ProductKey.class)
 public class Product {
     @Id
-    private Long id;
+    private String code;
+    @Id
+    private long number;
+    private String color;
 
-    private String name;
-
-    public Long getId() { 
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getName() {
-        return name;
+    public long getNumber() {
+        return number;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNumber(long number) {
+        this.number = number;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

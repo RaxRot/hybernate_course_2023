@@ -1,33 +1,45 @@
 package com.raxrot;
 
-import com.raxrot.entities.Employee;
+import com.raxrot.entities.Student;
+import com.raxrot.entities.keys.StudentKey;
 import com.raxrot.persistence.CustomPersistenceUnitInfo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
 
+        //For persistance
         //EntityManagerFactory emf= Persistence.createEntityManagerFactory("my-persistence-unit");
+
+        Map<String,String> props=new HashMap<>();
+        props.put("hibernate.show_sql", "true");
+        props.put("hibernate.hbm2ddl.auto", "create");
+
         EntityManagerFactory emf = new HibernatePersistenceProvider()
-                .createContainerEntityManagerFactory(new CustomPersistenceUnitInfo(), new HashMap<>());
+                .createContainerEntityManagerFactory(new CustomPersistenceUnitInfo(), props);
         EntityManager em = null;
 
         try {
             em = emf.createEntityManager();
+
             em.getTransaction().begin();
 
-           Employee e1= em.find(Employee.class, 1);
-            em.remove(e1);
-            Employee e2=new Employee();
-            e2.setId(1);
-            e2.setName("Li");
-            e2.setAddress("Chona");
+            StudentKey studentKey = new StudentKey();
+            studentKey.setCode("ABC");
+            studentKey.setNumber(10);
+            Student student = new Student();
+            student.setId(studentKey);
+            student.setName("Vlad");
 
-           em.persist(e2);//register object
+            em.persist(student);
+
+            Student st=em.find(Student.class, studentKey);
+            System.out.println(st);
 
            em.getTransaction().commit();//insert
        }catch (Exception e) {

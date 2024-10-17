@@ -54,3 +54,11 @@ w
 G.idea/sonarlint/issuestore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482,3\0\30f9777ea696a18aa49d3e9967e93a4276065227
 _
 /src/main/java/com/raxrot/entities/Employee.java,0\a\0afa8ff14c1f13c50e8b8263ba4dfe9531b588b1
+n
+>src/main/java/com/raxrot/entities/generatos/UUIDGenerator.java,5\3\53b2ec88575eef1b798d9ea189ff6144e9585fea
+f
+6src/main/java/com/raxrot/entities/keys/ProductKey.java,e\3\e30bb89b47cd282c213278a6c889f184a4f15fab
+^
+.src/main/java/com/raxrot/entities/Student.java,6\c\6c0836654c8a69f0c98c6aee55c0ece04936572a
+f
+6src/main/java/com/raxrot/entities/keys/StudentKey.java,d\e\de8e5d113246905e1281de2d241d1c74cc0a1371

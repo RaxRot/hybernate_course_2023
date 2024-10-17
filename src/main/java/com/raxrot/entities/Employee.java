@@ -1,16 +1,17 @@
 package com.raxrot.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.raxrot.entities.generatos.UUIDGenerator;
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "employee")
 public class Employee {
     @Id
+    @GenericGenerator(name = "UUIDGenerator",type = UUIDGenerator.class)
+    @GeneratedValue(generator = "UUIDGenerator")
     @Column(name = "id")
-    private int id;
+    private String id;
 
     @Column(name = "name")
     private String name;
@@ -18,11 +19,11 @@ public class Employee {
     @Column(name = "address")
     private String address;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
