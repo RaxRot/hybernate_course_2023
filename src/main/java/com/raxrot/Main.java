@@ -1,7 +1,7 @@
 package com.raxrot;
 
-import com.raxrot.entities.Student;
-import com.raxrot.entities.keys.StudentKey;
+import com.raxrot.entities.Passport;
+import com.raxrot.entities.Person;
 import com.raxrot.persistence.CustomPersistenceUnitInfo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -29,17 +29,18 @@ public class Main {
 
             em.getTransaction().begin();
 
-            StudentKey studentKey = new StudentKey();
-            studentKey.setCode("ABC");
-            studentKey.setNumber(10);
-            Student student = new Student();
-            student.setId(studentKey);
-            student.setName("Vlad");
 
-            em.persist(student);
+            Person person=new Person();
+            person.setName("Vlad");
 
-            Student st=em.find(Student.class, studentKey);
-            System.out.println(st);
+            Passport passport=new Passport();
+            passport.setNumber("ABC123");
+
+            person.setPassport(passport);
+            passport.setPerson(person);
+
+            em.persist(person);
+
 
            em.getTransaction().commit();//insert
        }catch (Exception e) {

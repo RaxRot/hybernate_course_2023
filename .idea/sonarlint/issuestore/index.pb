@@ -62,3 +62,7 @@ f
 .src/main/java/com/raxrot/entities/Student.java,6\c\6c0836654c8a69f0c98c6aee55c0ece04936572a
 f
 6src/main/java/com/raxrot/entities/keys/StudentKey.java,d\e\de8e5d113246905e1281de2d241d1c74cc0a1371
+]
+-src/main/java/com/raxrot/entities/Person.java,f\2\f2e3c3af8704dc3873e804587c59c13cd2513d78
+_
+/src/main/java/com/raxrot/entities/Passport.java,3\c\3cdb33d20a604e5bf70397109e0f6509ea436834
