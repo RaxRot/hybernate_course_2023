@@ -1,13 +1,15 @@
 package com.raxrot;
 
-import com.raxrot.entities.Passport;
-import com.raxrot.entities.Person;
+import com.raxrot.entities.Comment;
+import com.raxrot.entities.Post;
 import com.raxrot.persistence.CustomPersistenceUnitInfo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -29,17 +31,31 @@ public class Main {
 
             em.getTransaction().begin();
 
+            // Create a post
+            Post post = new Post();
+            post.setTitle("My First Post");
+            post.setContent("This is the content of my first post");
 
-            Person person=new Person();
-            person.setName("Vlad");
+            // Create comments for the post
+            Comment comment1 = new Comment();
+            comment1.setContent("Great post!");
 
-            Passport passport=new Passport();
-            passport.setNumber("ABC123");
+            Comment comment2 = new Comment();
+            comment2.setContent("Thanks for sharing!");
 
-            person.setPassport(passport);
-            passport.setPerson(person);
+            // Link comments to the post
+            List<Comment> comments = new ArrayList<>();
+            comments.add(comment1);
+            comments.add(comment2);
+            post.setComments(comments);
 
-            em.persist(person);
+            // Set post for each comment
+            comment1.setPost(post);
+            comment2.setPost(post);
+
+            // Persist the post (comments will be persisted because of cascade)
+            em.persist(post);
+
 
 
            em.getTransaction().commit();//insert

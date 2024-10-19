@@ -1,8 +1,8 @@
 
-ˆ
-java:S22594"@A "NullPointerException" could be thrown; "em" is nullable here.(Çá³‚ıÿÿÿÿ8«€Ü‹ª2J$46fb1d17-04c5-4a0a-b760-6a75fc659159
-‚
-java:S2259/"@A "NullPointerException" could be thrown; "em" is nullable here.(¢ïÇh8«€Ü‹ª2J$79ac8f00-2c1a-4c88-880e-78fcf200c9c0
-•
-java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(ë8¬€Ü‹ª2J$69156d3f-ffdb-41a0-9d13-3518e8197e73
-}	java:S125"<This block of commented-out lines of code should be removed.(ø…U8¨øÌÜ©2J$47f62406-d8cb-449b-8d59-009b2de13bab
+b
+java:S2259D"@A "NullPointerException" could be thrown; "em" is nullable here.(Çá³‚ıÿÿÿÿ8µŞ¬ª2
+\
+java:S2259?"@A "NullPointerException" could be thrown; "em" is nullable here.(¢ïÇh8µŞ¬ª2
+o
+java:S2095"RUse try-with-resources or close this "EntityManagerFactory" in a "finally" clause.(ë8¶Ş¬ª2
+}	java:S125"<This block of commented-out lines of code should be removed.(ø…U8¨øÌÜ©2J$33b3f51e-97a1-4d06-9e9b-23a875390f03

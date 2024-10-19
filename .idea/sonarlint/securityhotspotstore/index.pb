@@ -66,3 +66,7 @@ f
 -src/main/java/com/raxrot/entities/Person.java,f\2\f2e3c3af8704dc3873e804587c59c13cd2513d78
 _
 /src/main/java/com/raxrot/entities/Passport.java,3\c\3cdb33d20a604e5bf70397109e0f6509ea436834
+[
++src/main/java/com/raxrot/entities/Post.java,3\c\3c508c5a56cb3a5178fa1c956a8ce4b9fd7f8399
+^
+.src/main/java/com/raxrot/entities/Comment.java,9\6\962823a6b62b42f3e0e7a7dde52dd1612b5f3bf7
